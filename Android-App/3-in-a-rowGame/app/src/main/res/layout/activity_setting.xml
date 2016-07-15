@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/colourDemo1"
+            android:src="@mipmap/red"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/helpImg01"
+            android:layout_alignStart="@+id/helpImg01" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/colourDemo2"
+            android:src="@mipmap/blue"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/helpImg01"
+            android:layout_alignEnd="@+id/helpImg01" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstColour"
+            android:layout_below="@+id/colourDemo2"
+            android:layout_toRightOf="@+id/colourDemo2"
+            android:layout_toEndOf="@+id/colourDemo2" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/secondColour"
+            android:layout_below="@+id/firstColour"
+            android:layout_alignLeft="@+id/firstColour"
+            android:layout_alignStart="@+id/firstColour" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/GridSize"
+            android:layout_below="@+id/secondColour"
+            android:layout_alignRight="@+id/firstColour"
+            android:layout_alignEnd="@+id/firstColour"
+            android:layout_toRightOf="@+id/colourDemo2"
+            android:layout_toEndOf="@+id/colourDemo2" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/difficulty"
+            android:layout_below="@+id/GridSize"
+            android:layout_alignRight="@+id/firstColour"
+            android:layout_alignEnd="@+id/firstColour"
+            android:layout_toRightOf="@+id/colourDemo2"
+            android:layout_toEndOf="@+id/colourDemo2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit "
+            android:id="@+id/submitBtn"
+            android:layout_below="@+id/difficulty"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtHelp"
+            android:layout_marginTop="33dp"
+            android:text="@string/helpText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:layout_below="@+id/submitBtn"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/helpImg01"
+            android:src="@mipmap/helpimg01"
+            android:layout_below="@+id/txtHelp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/helpText1"
+            android:id="@+id/helpText1"
+            android:gravity="center"
+            android:layout_below="@+id/helpImg01"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/helpimg02"
+            android:layout_below="@+id/helpText1"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="1st Colour"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/colourDemo1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="2nd Colour"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/firstColour"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Size of Grid"
+            android:id="@+id/textView5"
+            android:layout_alignTop="@+id/GridSize"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Difficulty"
+            android:id="@+id/textView6"
+            android:layout_alignTop="@+id/difficulty"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="50dp"/>
+
+    </RelativeLayout>
+</ScrollView>
