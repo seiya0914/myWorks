@@ -15,3 +15,4 @@ The reqruied game funcitonalities are followings:
   - Can the size of the game grid
 - Have ranking functionality
   - If the record a player made is faster than either of the top 3 records, the record is saved.
+- Have a help screen
