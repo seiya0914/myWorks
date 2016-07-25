@@ -32,6 +32,7 @@ Route::delete('/deletevehicle/{vehicle}','VehicleController@deleteVehicle');
 Route::get('/updatevehicle/{vehicle}','VehicleController@displayEditForm');
 Route::post('updatevehicle/','VehicleController@update');
 Route::post('retire','VehicleController@retire');
+Route::get('/searchVehicle/',"VehicleController@searchVehicle");
 
 //Routes for location management
 Route::get('/locations/','LocationController@displayAllLocations');

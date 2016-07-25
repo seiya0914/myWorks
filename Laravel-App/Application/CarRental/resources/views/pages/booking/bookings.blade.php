@@ -10,7 +10,7 @@
 
 <div class="panel-body">
 <form action="searchBooking" method="GET">
-    <label for="searchingCust"><h2>Search</h2></label>
+    <label for="key"><h2>Search</h2></label>
     <input type="text" class="form-control" name="key" placeholder="Enter keyword to search booking...">
     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
     <div style="display:inline"> <h2>Keyword:<strong><i>{{$keyword}}</i></strong></h2></div>

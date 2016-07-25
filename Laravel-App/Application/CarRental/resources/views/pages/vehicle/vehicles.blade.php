@@ -7,6 +7,18 @@
         </div>
     </div>
 <div class="panel-body">
+
+<form action="searchVehicle" method="GET">
+    <label for="key"><h2>Search</h2></label>
+    <input type="text" class="form-control" name="key" placeholder="Enter keyword to search vehicle...">
+    <!-- <select name="vehicleSorting">
+        <option value=1>Available Cars</option>
+        <option value=0>Retired Cars</option>
+    </select>
+ -->    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+    <div style="display:inline"> <h2>Keyword:<strong><i>{{$keyword}}</i></strong></h2></div>
+</form>
+ 
     <table class="table table-striped task-table">
         <thead>
             <th>ID</th>
@@ -65,7 +77,7 @@
                                 <input type="hidden" name="id" value="{{$j->id}}">
                             </form>
                     @else
-                        <button class="btn btn-default disabled ">Retired</button>
+                        <button class="btn btn-default disabled ">Unavailable</button>
                     @endif
                 </td>
                 <td>

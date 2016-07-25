@@ -25,7 +25,7 @@ class VehicleController extends Controller
     {
     	$jointable = DB::table('vehicle')->join('location','vehicle.location',"=","location.id")->select('vehicle.id','vehicle.rego','vehicle.make','vehicle.model','vehicle.year','vehicle.transmission','vehicle.seating','location.suburb','vehicle.rate','vehicle.created_at','vehicle.updated_at','vehicle.availability')->get();
 
-    	return view('pages/vehicle/vehicles',['jointable'=>$jointable]);
+    	return view('pages/vehicle/vehicles',['jointable'=>$jointable])->with('keyword',"");
     }
 
     function displayForm(Request $r)
@@ -107,4 +107,28 @@ class VehicleController extends Controller
 
             return redirect('vehicles');
     }
+
+    function searchVehicle(Request $r)
+    {
+        
+
+        //the codes below looks for records that are similar to the searching keyword entered. It will search with all the columns the table has.
+        //So the user can search a record whatever keyword they want
+        $jointable = DB::table('vehicle')->join('location','location.id','=','vehicle.location')
+            ->select('vehicle.id','vehicle.rego','vehicle.make','vehicle.model','vehicle.year','vehicle.transmission','vehicle.rate','vehicle.seating','location.suburb','vehicle.availability','vehicle.created_at','vehicle.updated_at')
+            ->where('vehicle.availability','=',$r->vehicleSorting)
+            ->orWhere('vehicle.id','like', '%'.$r->key.'%')
+            ->orWhere('vehicle.rego','like', '%'.$r->key.'%')
+            ->orWhere('vehicle.make','like', '%'.$r->key.'%')
+            ->orWhere('vehicle.model','like', '%'.$r->key.'%')
+            ->orWhere('vehicle.year','like', '%'.$r->key.'%')
+            ->orWhere('vehicle.transmission','like', '%'.$r->key.'%')
+            ->orWhere('vehicle.seating','like', '%'.$r->key.'%')
+            ->orWhere('location.suburb','like', '%'.$r->key.'%')
+            ->orWhere('vehicle.rate','like','%'.$r->key.'%')
+            ->get();
+
+        return view('pages/vehicle/vehicles')->with('jointable',$jointable)->with('keyword',$r->key);
+    }
+
 }
