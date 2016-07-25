@@ -1,0 +1,6 @@
+{
+    "require": {
+        "yajra/laravel-datatables-oracle": "^6.11",
+        "fzaninotto/faker": "^1.6"
+    }
+}
