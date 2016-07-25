@@ -10,13 +10,13 @@
 
 <form action="searchVehicle" method="GET">
     <label for="key"><h2>Search</h2></label>
-    <input type="text" class="form-control" name="key" placeholder="Enter keyword to search vehicle...">
+    <input id="keyInput" type="text" class="form-control" name="key" placeholder="Enter keyword to search vehicle..." >
     <!-- <select name="vehicleSorting">
         <option value=1>Available Cars</option>
         <option value=0>Retired Cars</option>
     </select>
  -->    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-    <div style="display:inline"> <h2>Keyword:<strong><i>{{$keyword}}</i></strong></h2></div>
+    <div style="display:inline"> <h2>Keyword:<strong><i id="keyword">{{$keyword}}</i></strong></h2></div>
 </form>
  
     <table class="table table-striped task-table">
@@ -109,6 +109,13 @@
 
 </div>
 
+<script>
+    var inputBox = document.getElementById('keyInput');
+
+    inputBox.onkeyup = function(){
+        document.getElementById('keyword').innerHTML = inputBox.value;
+    }
+</script>
 @endsection
 @section('script')
     <script>//the script is for the confirm box if the delete button is clicked.
